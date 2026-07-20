@@ -1,0 +1,241 @@
+<!doctype html><html lang="es">  <head>    <meta charset="UTF-8" />    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad Práctica HTML y CSS</title>
+    <style>      * {        box-sizing: border-box;      }
+      body {        font-family: "Segoe UI", Arial, sans-serif;
+        background: #dfeaf5;
+        padding: 20px;
+        color: #333;      }
+      .contenedor {        max-width: 950px;
+        margin: 20px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        border: 2px solid #333;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);      }
+      h1 {        text-align: center;
+        color: #087f8c;
+        font-size: 32px;      }
+      h2 {        text-align: center;
+        color: #444;
+        border-bottom: 3px solid #16a085;
+        padding-bottom: 10px;
+        margin-bottom: 30px;      }
+      .datos {        background: #eef7f6;
+        border: 1px solid #16a085;
+        padding: 25px;
+        border-radius: 10px;
+        margin-bottom: 30px;      }
+      .datos label {        font-weight: bold;
+        font-size: 18px;      }
+      input {        padding: 12px;
+        margin: 8px;
+        border: 2px solid #aaa;
+        border-radius: 8px;
+        font-size: 16px;      }
+      .nombre {        width: 650px;
+        max-width: 100%;      }
+      .curso {        width: 200px;      }
+      .fecha {        width: 180px;      }
+      
+      /* Sección de instrucciones para Visual Studio Code */
+      .instrucciones-vscode {
+        background: #fff3cd;
+        border: 2px dashed #ffc107;
+        color: #664d03;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+      .instrucciones-vscode h3 {
+        margin-top: 0;
+        color: #856404;
+        font-size: 20px;
+        border-bottom: 1px solid #ffeeba;
+        padding-bottom: 8px;
+      }
+      .instrucciones-vscode ol {
+        margin: 0;
+        padding-left: 20px;
+      }
+      .instrucciones-vscode li {
+        margin-bottom: 10px;
+      }
+      .enlace-investigar {
+        color: #16a085;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 1px solid #16a085;
+      }
+      .enlace-investigar:hover {
+        color: #0b6654;
+        border-bottom-color: #0b6654;
+      }
+      .tecla {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+        color: #333;
+        display: inline-block;
+        font-size: 12px;
+        font-family: monospace;
+        font-weight: bold;
+        padding: 2px 6px;
+        white-space: nowrap;
+      }
+      .resaltado-folder {
+        background: #ffeeba;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-family: monospace;
+      }
+
+      .pregunta {        background: #fafafa;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 7px solid #16a085;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        line-height: 1.6;      }
+      .pregunta b {        font-size: 17px;      }
+      textarea {        width: 100%;
+        height: 120px;
+        margin-top: 15px;
+        padding: 15px;
+        font-size: 16px;
+        border: 2px solid #bbb;
+        border-radius: 10px;
+        resize: vertical;      }
+      textarea:focus {        outline: none;
+        border-color: #16a085;
+        background: #f2ffff;      }
+      
+      /* Sección de instrucciones de descarga y envío manual */
+      .instrucciones-envio {
+        background: #eef7f6;
+        border: 2px dashed #16a085;
+        color: #2c3e50;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 40px;
+        line-height: 1.6;
+      }
+      .instrucciones-envio h3 {
+        margin-top: 0;
+        color: #087f8c;
+      }
+      .instrucciones-envio ol {
+        margin-bottom: 0;
+        padding-left: 20px;
+      }
+      .instrucciones-envio li {
+        margin-bottom: 8px;
+      }
+
+      .botones-area {        display: flex;        justify-content: center;        margin-top: 25px;      }
+      button {        background: #16a085;
+        color: white;
+        border: none;
+        padding: 15px 45px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;      }
+      button:hover {        background: #0b6654;      }
+      @media print {        @page {          size: A4;
+          margin: 15mm;        }
+        body {          background: white;
+          padding: 0;        }
+        .contenedor {          box-shadow: none;
+          border: none;
+          padding: 0;        }
+        .instrucciones-vscode, .instrucciones-envio, .botones-area {          display: none;        }
+        textarea {          border: 1px solid #555;        }      }    </style>  </head>
+  <body>    <div class="contenedor">      <h1>🖥️ Actividad Práctica Repaso de HTML y CSS 4to Informática</h1>
+      <h2>Explorando etiquetas, estilos y modificaciones de código</h2>
+      
+      <!-- Bloque Inicial: Preparación en VS Code -->
+      <div class="instrucciones-vscode">
+        <h3>🛠️ Pasos previos: Configuración en Visual Studio Code</h3>
+        <ol>
+          <li><b>Crear la carpeta de trabajo:</b> Abrí el explorador de archivos de tu computadora, ingresá a <b>Mis Documentos</b> y creá una carpeta nueva llamada exactamente: <span class="resaltado-folder">repasohtmlcss4to</span>.</li>
+          <li><b>Acceder al sitio web:</b> Hacé clic en el siguiente enlace para abrir el proyecto base en una pestaña nueva: <a class="enlace-investigar" href="actividad.html" target="_blank">Sitio Web para investigar</a>.</li>
+          <li><b>Ver el código fuente:</b> Una vez dentro de la página, hacé clic derecho en cualquier parte vacía de la pantalla y seleccioná la opción <b>"Ver código fuente de la página"</b> (o presioná las teclas <kbd class="tecla">Ctrl</kbd> + <kbd class="tecla">U</kbd>). Se abrirá otra pestaña con el código.</li>
+          <li><b>Copiar todo el código:</b> Seleccioná absolutamente todo el código visible presionando <kbd class="tecla">Ctrl</kbd> + <kbd class="tecla">A</kbd> en tu teclado y luego copialo con <kbd class="tecla">Ctrl</kbd> + <kbd class="tecla">C</kbd>.</li>
+          <li><b>Guardar el archivo en VS Code:</b> Abrí Visual Studio Code, creá un archivo nuevo y pegá el código (<kbd class="tecla">Ctrl</kbd> + <kbd class="tecla">V</kbd>). Al momento de guardarlo (<kbd class="tecla">Ctrl</kbd> + <kbd class="tecla">S</kbd>), buscalo dentro de Mis Documentos, ingresá a la carpeta <span class="resaltado-folder">repasohtmlcss4to</span> que creaste en el paso 1 y guardalo con el nombre <span class="resaltado-folder">actividad.html</span>.</li>
+        <li>Visualiza en el navegar</li>
+        <li><strong>Luego Completa el siguiente custionario haz cambios en el codigo si es necesario</strong></li>
+        </ol>
+       
+      </div>
+
+      <div class="datos">        <label> Nombre completo del alumno: </label>
+        <br />
+        <input class="nombre" type="text" />
+        <br /><br />
+        <label> Curso: </label>
+        <input class="curso" type="text" />
+        <label> Fecha: </label>
+        <input class="fecha" type="date" />      </div>
+      <div class="pregunta">        <b>          1. ¿Para qué sirve la etiqueta &lt;meta charset="UTF-8"&gt;?          <br />          (Pista: Probá borrarla y fijate qué pasa si escribís palabras con          acentos o la letra Ñ en los párrafos).        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          2. ¿Cuál es la diferencia entre usar un título con &lt;h1&gt; y un          título con &lt;h2&gt; según lo que observás en la pantalla y en el          código?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          3. Si querés agregar un nuevo tema favorito a la lista actual (por          ejemplo, "🎬 Edición de Video"), ¿qué etiqueta de HTML tenés que          duplicar y escribir dentro de &lt;ul&gt;?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          4. Buscá una foto que te guste en Google, hacé clic derecho,          seleccioná "Copiar dirección de la imagen" y pegala dentro del          atributo src="..." de la etiqueta &lt;img&gt;.          <br />          ¿Lograste cambiar la foto del proyecto con éxito?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          5. ¿Qué sucede si borrás el atributo alt="..." de la etiqueta          &lt;img&gt;?          <br />          ¿Afecta a la visualización de la imagen o cumple otra función?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          6. En HTML, las listas &lt;ul&gt; son "desordenadas" (usan viñetas).          <br />          ¿Qué etiqueta tendrías que usar en lugar de &lt;ul&gt; para que la          lista muestre números ordenados?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          7. ¿Qué pasaría si te olvidás de cerrar la etiqueta &lt;/div&gt; al          final del código?          <br />          Intentá borrarla y mirá si el diseño se rompe o cambia de lugar.        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          8. Si quisieras agregar un enlace (link) que te lleve a otra página          web,          <br />          ¿qué etiqueta de HTML deberías investigar?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          9. ¿Por qué todo el contenido visible de la página está encerrado          dentro de &lt;body&gt; y &lt;/body&gt;?          <br />          ¿Qué pasa si ponés un párrafo fuera de ellas?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          10. ¿Cómo se escriben los comentarios en HTML en comparación con CSS?          <br />          Explicá qué símbolos se usan.        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          11. Si quiero cambiar el tipo de letra por Impact o Courier,          <br />          ¿en qué parte del CSS debo modificar font-family?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          12. Buscá margin:20px auto dentro de .contenedor.          <br />          Si cambiás 20px por 100px, ¿qué sucede?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          13. ¿Qué pasa si escribís margin:20px 0?          <br />          ¿Qué función cumple auto?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          14. Cambiá border:2px solid #333333 por un borde de 8px dashed.          <br />          ¿Qué aspecto tiene ahora?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          15. La propiedad border-radius:8px está en la foto.          <br />          ¿Qué valor usarías para hacerla completamente redonda?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          16. En la lista hay border-left:5px solid #16a085.          <br />          ¿Qué pasa si cambiás border-left por border-right o border-top?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          17. Si cambiás padding:25px por padding:0px,          <br />          ¿qué pasa con el texto respecto a los bordes?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          18. Si cambiás background-color:#e3edf7 por red o yellow,          <br />          ¿el navegador lo entiende?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          19. Modificá line-height:1.6 a 3.0 y luego a 0.8.          <br />          ¿Qué controla esta propiedad?        </b>
+        <textarea></textarea>      </div>
+      <div class="pregunta">        <b>          20. Si cambiás width:800px por width:100%,          <br />          ¿la hoja sigue centrada o cambia completamente?        </b>
+        <textarea></textarea>              </div>
+      
+      <!-- Bloque visual instructivo para el alumno -->
+      <div class="instrucciones-envio">
+        <h3>📋 Instrucciones para la entrega de la actividad:</h3>
+        <ol>
+          <li>Completá tus datos (Nombre, Curso y Fecha) en la parte superior y respondé cada pregunta.</li>
+          <li>Hacé clic abajo en el botón verde <b>"Guardar PDF"</b>.</li>
+          <li>En la ventana que se abre, asegurate de que el destino sea <b>"Guardar como PDF"</b>.</li>
+          <li>Cambiá el nombre del archivo asignándole tu <b>Nombre y Apellido completo</b> (ejemplo: <i>Juan_Perez_Actividad.pdf</i>) y guardalo en tu computadora.</li>
+          <li>Abrí tu cuenta de Gmail y redactá un correo para <b>josepantaleo@gmail.com</b>.</li>
+          <li>En el campo <b>Asunto</b> escribí: <span style="color: #087f8c; font-weight: bold;">Actividad Práctica HTML y CSS - [Tu Nombre y Apellido]</span>.</li>
+          <li>Adjuntá el archivo PDF generado de tu computadora y envialo.</li>
+        </ol>
+      </div>
+
+      <div class="botones-area">
+        <button onclick="window.print()">Guardar PDF</button>
+      </div>
+    </div>
+  </body>
+</html>

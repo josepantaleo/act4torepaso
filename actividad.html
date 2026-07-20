@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Esto define el idioma de la página y los caracteres especiales (como la ñ o los acentos) -->
+    <meta charset="UTF-8" />
+    <title>Mi Primer Sitio Web - 4to Año</title>
+
+    <!-- La etiqueta <style> es donde escribimos todo el código CSS para darle color y forma a la web -->
+    <style>
+      /* ========================================================
+           1. ESTILOS DE LA PÁGINA EN GENERAL (Etiqueta body)
+           ======================================================== */
+      body {
+        background-color: #e3edf7; /* Cambia el color de fondo de toda la pantalla (Celeste claro) */
+        font-family: sans-serif; /* Cambia el tipo de letra a una más limpia y moderna sin "patitas" */
+        margin: 0; /* Borra los márgenes que el navegador trae por defecto por fuera de la hoja */
+        padding: 0; /* Borra los espacios en blanco internos que el navegador crea por defecto */
+      }
+
+      /* ========================================================
+           2. EL CONTENEDOR PRINCIPAL (La "hoja" blanca central)
+           ======================================================== */
+      .contenedor {
+        width: 800px; /* Le da un ancho fijo a la hoja para que no se estire en pantallas gigantes */
+        background-color: white; /* El color de fondo de nuestra hoja va a ser blanco */
+        margin: 20px auto; /* Truco mágico: "20px" separa la hoja arriba/abajo y "auto" la centra a los lados */
+        padding: 25px; /* Deja un espacio adentro para que el texto no toque los bordes de la hoja */
+        border: 2px solid #333333; /* Dibuja un contorno: de 2 píxeles de grosor, línea continua (solid) y color gris oscuro */
+      }
+
+      /* ========================================================
+           3. ESTILOS PARA LOS TÍTULOS Y TEXTOS
+           ======================================================== */
+      h1 {
+        color: #2c3e50; /* Color azul oscuro para el título más importante */
+        text-align: center; /* Centra el título en el medio de la hoja */
+        margin-bottom: 20px; /* Deja un espacio libre abajo del título antes de que aparezca la foto */
+      }
+
+      h2 {
+        color: #16a085; /* Color verde agua para los subtítulos */
+        border-bottom: 2px solid #16a085; /* Dibuja una línea decorativa justo debajo de cada subtítulo */
+        padding-bottom: 5px; /* Separa el texto del subtítulo de la línea decorativa de abajo */
+        margin-top: 30px; /* Deja espacio arriba del subtítulo para que no se pegue con el texto anterior */
+        margin-bottom: 15px; /* Deja espacio abajo del subtítulo antes del párrafo */
+      }
+
+      p {
+        font-size: 16px; /* Define el tamaño de la letra del párrafo */
+        line-height: 1.6; /* Controla el interlineado (espacio entre renglones) para que sea más fácil de leer */
+        color: #333333; /* Color del texto (un gris casi negro, más suave para la vista) */
+      }
+
+      /* ========================================================
+           4. ESTILO PARA LA FOTO
+           ======================================================== */
+      .foto-principal {
+        display: block; /* Convierte la foto en un bloque independiente (permite moverla mejor) */
+        margin: 0 auto; /* Al estar en "display: block", este "auto" centra la imagen perfectamente */
+        max-width: 100%; /* Hace que la foto sea inteligente: si es muy grande, se achica para no romper la hoja */
+        height: auto; /* Mantiene las proporciones de la foto para que no se vea aplastada ni estirada */
+        border-radius: 8px; /* Redondea un poquito las esquinas de la foto para que quede más estética */
+      }
+
+      /* ========================================================
+           5. ESTILOS DE LA LISTA (Viñetas)
+           ======================================================== */
+      ul {
+        background-color: #f9f9f9; /* Le pone un fondo gris muy clarito a todo el bloque de la lista */
+        padding: 20px 40px; /* Deja espacio alrededor de los ítems (20px arriba/abajo, 40px a los costados) */
+        border-left: 5px solid #16a085; /* Agrega una barra gruesa de color verde a la izquierda como detalle de diseño */
+        margin-left: 0; /* Resetea la posición para que se alinee bien con los párrafos */
+      }
+
+      li {
+        margin-bottom: 10px; /* Deja un espacio de 10 píxeles entre cada elemento de la lista para que no estén pegados */
+        font-weight: bold; /* Pone la letra de la lista en negrita */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- La etiqueta <div> agrupa elementos. Aquí crea nuestra "hoja" blanca usando la clase .contenedor del CSS -->
+    <div class="contenedor">
+      <!-- <h1> se usa SOLO UNA VEZ por página para el título principal -->
+      <h1>Bienvenidos a Zona Gamer</h1>
+
+      <!-- Etiqueta de imagen: "src" es la ruta (dirección de internet) y "class" le aplica los estilos que creamos arriba -->
+      <img
+        src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600"
+        alt="Consola y juegos"
+        class="foto-principal"
+      />
+
+      <!-- Los <h2> sirven para separar el contenido en diferentes secciones (subtítulos) -->
+      <h2>¿Quiénes somos?</h2>
+      <!-- <p> se usa para escribir cualquier párrafo de texto largo -->
+      <p>
+        Somos un grupo de compañeros de 4to año apasionados por la tecnología,
+        los videojuegos y el diseño web. Creamos este espacio para compartir los
+        análisis de nuestros juegos favoritos, noticias del mundo tecnológico y
+        guías para armar las mejores computadoras.
+      </p>
+
+      <h2>Nuestros Temas Favoritos</h2>
+      <!-- <ul> abre una lista desordenada (con viñetas o puntitos) -->
+      <ul>
+        <!-- Cada <li> representa un elemento o renglón dentro de la lista -->
+        <li>Videojuegos de Estrategia y Acción</li>
+        <li>Componentes de Hardware (Placas de video, procesadores)</li>
+        <li>Aplicaciones móviles y novedades</li>
+        <li>Programación web con HTML y CSS</li>
+      </ul>
+     
+
+      <h2>Contacto</h2>
+      <p>
+        Si querés sumarte a nuestro equipo o sugerir un tema para el próximo
+        artículo, nos encontrás en el laboratorio de informática de la escuela.
+      </p>
+    </div>
+   
+  </body>
+</html>
