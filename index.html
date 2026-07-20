@@ -213,7 +213,7 @@
   </head>
   <body>
     <div class="contenedor">
-      <h1>🖥️ Actividad Práctica Repaso de HTML y CSS  Informática</h1>
+      <h1>🖥️ Actividad Práctica Repaso de HTML y CSS Informática</h1>
       <h2>Explorando etiquetas, estilos y modificaciones de código</h2>
 
       <!-- Bloque Inicial: Preparación en VS Code -->
@@ -255,8 +255,8 @@
             >
             + <kbd class="tecla">S</kbd>), buscalo dentro de Mis Documentos,
             ingresá a la carpeta
-            <span class="resaltado-folder">repasohtmlcss</span> que creaste
-            en el paso 1 y guardalo con el nombre
+            <span class="resaltado-folder">repasohtmlcss</span> que creaste en
+            el paso 1 y guardalo con el nombre
             <span class="resaltado-folder">actividad.html</span>.
           </li>
           <li>Visualiza en el navegar</li>
@@ -281,8 +281,10 @@
       </div>
       <div class="pregunta">
         <b>
-         1. ¿Para qué sirve la etiqueta &lt;title&gt; dentro de la estructura de un documento HTML? <br />
-(Pista: Observá qué aparece en la pestaña del navegador cuando abrís una página web).
+          1. ¿Para qué sirve la etiqueta &lt;title&gt; dentro de la estructura
+          de un documento HTML? <br />
+          (Pista: Observá qué aparece en la pestaña del navegador cuando abrís
+          una página web).
         </b>
         <textarea></textarea>
       </div>
@@ -370,7 +372,8 @@
       <div class="pregunta">
         <b>
           12. Buscá margin:20px auto dentro de .contenedor. <br />
-          Si cambiás 20px por 100px, ¿qué sucede (usa un zoom del 50% para ver que sucede) ? 
+          Si cambiás 20px por 100px, ¿qué sucede (usa un zoom del 50% para ver
+          que sucede) ?
         </b>
         <textarea></textarea>
       </div>
@@ -391,7 +394,8 @@
       <div class="pregunta">
         <b>
           15. La propiedad border-radius:8px está en la foto. <br />
-          ¿Qué valor usarías para hacerla completamente redonda u ovalada (proba con %)?
+          ¿Qué valor usarías para hacerla completamente redonda u ovalada (proba
+          con %)?
         </b>
         <textarea></textarea>
       </div>
@@ -434,37 +438,36 @@
       <!-- Bloque visual instructivo para el alumno -->
       <div class="instrucciones-envio">
         <h3>📋 Instrucciones para la entrega de la actividad:</h3>
+
         <ol>
+          <li>Completá tus datos y respondé todas las preguntas.</li>
+
+          <li>Hacé clic en <b>📄 Guardar PDF</b>.</li>
+
           <li>
-            Completá tus datos (Nombre, Curso y Fecha) en la parte superior y
-            respondé cada pregunta.
+            Elegí <b>Guardar como PDF</b> y guardalo con el nombre:
+            <b>Nombre_Apellido_Actividad.pdf</b>.
           </li>
-          <li>Hacé clic abajo en el botón verde <b>"Guardar PDF"</b>.</li>
+
+          <li>Hacé clic en el botón <b>📧 Enviar por Gmail</b>.</li>
+
+          <li>Se abrirá Gmail con el destinatario y el asunto ya completos.</li>
+
           <li>
-            En la ventana que se abre, asegurate de que el destino sea
-            <b>"Guardar como PDF"</b>.
+            Solo tenés que adjuntar el PDF que guardaste y presionar
+            <b>Enviar</b>.
           </li>
-          <li>
-            Cambiá el nombre del archivo asignándole tu
-            <b>Nombre y Apellido completo</b> (ejemplo:
-            <i>Juan_Perez_Actividad.pdf</i>) y guardalo en tu computadora.
-          </li>
-          <li>
-            Abrí tu cuenta de Gmail y redactá un correo para
-            <b>josepantaleo@gmail.com</b>.
-          </li>
-          <li>
-            En el campo <b>Asunto</b> escribí:
-            <span style="color: #087f8c; font-weight: bold"
-              >Actividad Práctica HTML y CSS - [Tu Nombre y Apellido]</span
-            >.
-          </li>
-          <li>Adjuntá el archivo PDF generado de tu computadora y envialo.</li>
         </ol>
       </div>
-
       <div class="botones-area">
-        <button onclick="window.print()">Guardar PDF</button>
+        <button onclick="window.print()">📄 Guardar PDF</button>
+
+        <button
+          onclick="enviarGmail()"
+          style="margin-left: 15px; background: #28a745"
+        >
+          📧 Enviar por Gmail
+        </button>
       </div>
     </div>
     <script>
@@ -475,6 +478,122 @@
           "width=1000,height=700,top=50,left=100,scrollbars=yes,resizable=yes",
         );
       }
+      function abrirActividad() {
+        window.open(
+          "actividad.html",
+          "ActividadHTMLCSS",
+          "width=1000,height=700,top=50,left=100,scrollbars=yes,resizable=yes",
+        );
+      }
+
+      function abrirActividad() {
+        window.open(
+          "actividad.html",
+          "ActividadHTMLCSS",
+          "width=1000,height=700,top=50,left=100,scrollbars=yes,resizable=yes",
+        );
+      }
+
+function enviarGmail() {
+
+    const campoNombre = document.querySelector(".nombre");
+    const campoCurso = document.querySelector(".curso");
+    const campoFecha = document.querySelector(".fecha");
+
+    const nombre = campoNombre.value.trim();
+    const curso = campoCurso.value.trim();
+    const fecha = campoFecha.value;
+
+    // Validar Nombre
+    if (nombre === "") {
+
+        alert("⚠️ Debés completar tu Nombre y Apellido antes de enviar la actividad.");
+
+        campoNombre.focus();
+        campoNombre.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        campoNombre.style.border = "3px solid red";
+        campoNombre.style.background = "#fff3cd";
+
+        return;
+    }
+
+    // Validar Curso
+    if (curso === "") {
+
+        alert("⚠️ Debés completar el Curso antes de enviar la actividad.");
+
+        campoCurso.focus();
+        campoCurso.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        campoCurso.style.border = "3px solid red";
+        campoCurso.style.background = "#fff3cd";
+
+        return;
+    }
+
+    // Validar Fecha
+    if (fecha === "") {
+
+        alert("⚠️ Debés seleccionar la Fecha antes de enviar la actividad.");
+
+        campoFecha.focus();
+        campoFecha.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        campoFecha.style.border = "3px solid red";
+        campoFecha.style.background = "#fff3cd";
+
+        return;
+    }
+
+    const asunto = encodeURIComponent(
+        `Actividad Práctica HTML y CSS - ${nombre} - ${curso}`
+    );
+
+    const cuerpo = encodeURIComponent(
+`Hola Profesor.
+
+Adjunto el archivo PDF correspondiente a la actividad.
+
+DATOS DEL ALUMNO
+
+Nombre: ${nombre}
+Curso: ${curso}
+Fecha: ${fecha}
+
+(Recordá adjuntar el archivo PDF antes de enviar este correo).
+
+Saludos.`
+    );
+
+    window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=josepantaleo@gmail.com&su=${asunto}&body=${cuerpo}`,
+        "_blank"
+    );
+}
+campoResaltar(".nombre");
+campoResaltar(".curso");
+campoResaltar(".fecha");
+
+function campoResaltar(selector) {
+
+    document.querySelector(selector).addEventListener("input", function () {
+
+        this.style.border = "2px solid #aaa";
+        this.style.background = "white";
+
+    });
+
+}
     </script>
   </body>
 </html>
