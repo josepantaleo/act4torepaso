@@ -76,6 +76,87 @@
         margin-bottom: 10px; /* Deja un espacio de 10 píxeles entre cada elemento de la lista para que no estén pegados */
         font-weight: bold; /* Pone la letra de la lista en negrita */
       }
+
+      /* ========================================================
+           6. BOTONES INTERACTIVOS
+           ======================================================== */
+      .botones-container {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+      }
+
+      button {
+        background-color: #16a085;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0b6654;
+        transform: scale(1.05);
+      }
+
+      button.btn-dark {
+        background-color: #2c3e50;
+      }
+
+      button.btn-dark:hover {
+        background-color: #1a252f;
+      }
+
+      /* ========================================================
+           7. SECCIÓN DE RESULTADOS
+           ======================================================== */
+      .resultado {
+        background-color: #f0f8ff;
+        border-left: 4px solid #16a085;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 4px;
+        display: none;
+      }
+
+      .resultado.visible {
+        display: block;
+      }
+
+      .contador-display {
+        background: #16a085;
+        color: white;
+        padding: 15px;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      body.dark-mode {
+        background-color: #1a252f;
+        color: #e3edf7;
+      }
+
+      body.dark-mode .contenedor {
+        background-color: #2c3e50;
+        color: #e3edf7;
+      }
+
+      body.dark-mode button {
+        background-color: #16a085;
+      }
+
+      body.dark-mode .resultado {
+        background-color: #34495e;
+        color: #e3edf7;
+      }
     </style>
   </head>
   <body>
@@ -110,6 +191,20 @@
         <li>Aplicaciones móviles y novedades</li>
         <li>Programación web con HTML y CSS</li>
       </ul>
+
+      <!-- SECCIÓN DE INTERACTIVIDAD CON JAVASCRIPT -->
+      <h2>🔧 Prueba el Código JavaScript</h2>
+      
+      <div class="botones-container">
+        <button onclick="mostrarJuegos()">📋 Ver Juegos</button>
+        <button onclick="contarClics()">👆 Contador</button>
+        <button onclick="saludoPersonalizado()">👋 Saludarme</button>
+        <button onclick="cambiarTema()" class="btn-dark">🌙 Tema Oscuro</button>
+        <button onclick="mostrarHora()">⏰ Hora Actual</button>
+      </div>
+
+      <div id="resultado" class="resultado"></div>
+      <div id="contador-display" class="contador-display" style="display: none;">Clics: 0</div>
      
 
       <h2>Contacto</h2>
@@ -120,4 +215,126 @@
     </div>
    
   </body>
+  
+  <!-- ====================================================
+       CÓDIGO JAVASCRIPT - Aquí comienza la interactividad
+       ==================================================== -->
+  <script>
+    // ===== VARIABLES GLOBALES =====
+    const nombreSitio = "Zona Gamer";
+    const años = 2026;
+    let visitantes = 150;
+    let contadorClics = 0;
+
+    // ===== 1. ARRAY DE JUEGOS =====
+    const juegos = ["Elden Ring", "Minecraft", "League of Legends", "Valorant"];
+
+    // ===== 2. FUNCIÓN: MOSTRAR JUEGOS =====
+    function mostrarJuegos() {
+      let lista = "<b>📋 Lista de Juegos Disponibles:</b><br>";
+      for (let i = 0; i < juegos.length; i++) {
+        lista += (i + 1) + ". " + juegos[i] + "<br>";
+      }
+      mostrarResultado(lista);
+    }
+
+    // ===== 3. FUNCIÓN: CONTADOR DE CLICS =====
+    function contarClics() {
+      contadorClics++;
+      const display = document.getElementById("contador-display");
+      display.style.display = "block";
+      display.textContent = "Clics: " + contadorClics;
+
+      if (contadorClics === 10) {
+        mostrarResultado("🎉 ¡Felicidades! ¡Llegaste a 10 clics!");
+      }
+    }
+
+    // ===== 4. FUNCIÓN: SALUDO PERSONALIZADO =====
+    function saludoPersonalizado() {
+      const nombre = prompt("¿Cuál es tu nombre?");
+      if (nombre) {
+        const saludo = "¡Hola, " + nombre + "! Bienvenido a " + nombreSitio + " 🎮";
+        mostrarResultado(saludo);
+        console.log(saludo);
+      }
+    }
+
+    // ===== 5. FUNCIÓN: CAMBIAR TEMA =====
+    let temaOscuro = false;
+    function cambiarTema() {
+      temaOscuro = !temaOscuro;
+      if (temaOscuro) {
+        document.body.classList.add("dark-mode");
+        mostrarResultado("🌙 Tema Oscuro Activado");
+      } else {
+        document.body.classList.remove("dark-mode");
+        mostrarResultado("☀️ Tema Claro Activado");
+      }
+    }
+
+    // ===== 6. FUNCIÓN: MOSTRAR HORA =====
+    function mostrarHora() {
+      const ahora = new Date();
+      const hora = ahora.getHours();
+      const minutos = ahora.getMinutes();
+      const segundos = ahora.getSeconds();
+      const horaFormato = hora + ":" + (minutos < 10 ? "0" : "") + minutos + ":" + (segundos < 10 ? "0" : "") + segundos;
+      mostrarResultado("⏰ Hora Actual: " + horaFormato);
+    }
+
+    // ===== 7. FUNCIÓN AUXILIAR: MOSTRAR RESULTADO =====
+    function mostrarResultado(mensaje) {
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = mensaje;
+      resultado.classList.add("visible");
+    }
+
+    // ===== 8. FUNCIÓN: VERIFICAR EDAD (Ejemplo educativo) =====
+    function verificarEdad(edad) {
+      if (edad >= 18) {
+        return "Eres mayor de edad ✓";
+      } else if (edad >= 13) {
+        return "Contenido apropiado para tu edad";
+      } else {
+        return "Consulta con un adulto";
+      }
+    }
+
+    // ===== 9. OBJETO: PERFIL DE USUARIO =====
+    const miPerfil = {
+      usuario: "GamerAlumno",
+      nivel: 45,
+      juegosJugados: 20,
+      saludar: function() {
+        return "Hola, soy " + this.usuario + " nivel " + this.nivel;
+      }
+    };
+
+    // ===== 10. FUNCIÓN: CAMBIAR TÍTULO =====
+    function cambiarTitulo() {
+      const titulo = document.querySelector("h1");
+      titulo.style.color = "#ff6b6b";
+      titulo.textContent = "🎮 Bienvenidos a Zona Gamer 🎮";
+    }
+
+    // ===== CONSOLA - Mensajes de inicio =====
+    console.log("✓ Script cargado correctamente");
+    console.log(miPerfil.saludar());
+    console.log("Verificación de edad (16 años): " + verificarEdad(16));
+    console.log("Visitantes actuales: " + visitantes);
+
+    // ===== EVENT LISTENER: Ejecutar al cargar la página =====
+    window.addEventListener("load", function() {
+      cambiarTitulo();
+      console.log("✓ Página cargada exitosamente");
+    });
+  </script>
+</html>
+    // 8. EVENT LISTENER - Cambiar título cuando carga la página
+    window.addEventListener("load", function() {
+      cambiarTitulo();
+      console.log("✓ Página cargada exitosamente");
+    });
+  </script>
 </html>
